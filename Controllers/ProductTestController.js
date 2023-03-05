@@ -1,4 +1,4 @@
-const addingtwonumber =  (req, res ,next) => {
+const addingtwonumber =  (req, res) => {
     try {
         const { number1, number2 } = req.body;
         const result = number1+number2;
@@ -17,8 +17,27 @@ const addingtwonumber =  (req, res ,next) => {
 }
 
 
+const subtractTwonumber = (req,res)=>{
+    try {
+        const {number1,number2} = req.body;
+        const result = number1-number2;
+        res.json({
+          Message : 'Api of subtract is working',
+          Result:result,
+          Data:true
+        })
+    } catch (error) {
+       res.json({
+        Message: 'Api of Subtract is not working',
+        Result:null,
+        Data:false
+       })        
+    }
+}
+
 module.exports = {
     addingtwonumber,
+    subtractTwonumber
 
     
 }
