@@ -36,9 +36,28 @@ const subtractTwonumber = (req,res)=>{
 }
 
 
+const DividingTwonumber = (req,res)=>{
+    try {
+        const {number1,number2}= req.body;
+        const result= number1/number2;
+        res.json({
+            Message:'Api of diving two number is working',
+            Result:result,
+            Data:true
+        })
+    } catch (error) {
+      res.json({
+        Message:'Api of diving two number is not working',
+        Result:null,
+        Data:false
+      })        
+    }
+}
+
 module.exports = {
     addingtwonumber,
-    subtractTwonumber
+    subtractTwonumber,
+    DividingTwonumber
 
     
 }
