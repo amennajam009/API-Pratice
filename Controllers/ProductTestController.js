@@ -54,10 +54,29 @@ const DividingTwonumber = (req,res)=>{
     }
 }
 
+const multiplyTwonumber = (req,res)=>{
+    try {
+        const {number1,number2}=req.body;
+        const result = number1*number2;
+        res.json({
+            message:'API of multiply two numbers is working',
+            Result:result,
+            Data:true
+        })
+    } catch (error) {
+        res.json({
+            message:'API of multiply two number is not working',
+            Result:null,
+            Data:true
+        })
+    }
+}
+
 module.exports = {
     addingtwonumber,
     subtractTwonumber,
-    DividingTwonumber
+    DividingTwonumber,
+    multiplyTwonumber
 
     
 }
