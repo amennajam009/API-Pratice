@@ -115,7 +115,7 @@ const Printnumbers1To10 = (req,res)=>{
   try {
      let result = '';
      for (i=1; i<=10;i++){
-        result+=i+'';
+        result+=i+ ','+'';
      }
      
      res.json({
@@ -132,6 +132,53 @@ const Printnumbers1To10 = (req,res)=>{
   }
 }
 
+const PrintOddnumber = (req,res)=>{
+    try {
+        let result = '';
+        for(i=1;i<=50;i++){
+            
+            if(i%2 !==0){
+                result+=i+ ','+'';
+                console.log(i);
+            }
+        }
+        res.json({
+            message:'API of Oddnumber is working',
+            Result:result,
+            Data:true
+        })
+    } catch (error) {
+        res.json({
+            message:'Api of Oddnumber is not working',
+            Result:null,
+            Data:false
+        })
+    }
+}
+
+const PrintEvennumber = (req,res)=>{
+    try {
+        let result = '';
+        for (i=1;i<=50;i++){
+            if(i%2 ===0){
+                result+=i+','+'';
+                console.log(i);
+            }
+        }
+        res.json({
+            message:'Api of Even-number is working',
+            Result:result,
+            Data:true
+        })
+    } catch (error) {
+        res.json({
+            message:'Api of Even-number is not working',
+            Result:null,
+            Data:false
+        })
+    }
+}
+
 module.exports = {
     addingtwonumber,
     subtractTwonumber,
@@ -139,6 +186,8 @@ module.exports = {
     multiplyTwonumber,
     AddandSub,
     DividingAndMulti,
-    Printnumbers1To10
+    Printnumbers1To10,
+    PrintOddnumber,
+    PrintEvennumber
     
 }
