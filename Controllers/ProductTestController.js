@@ -199,6 +199,24 @@ const IsnumOddEven = (req,res)=>{
     }
 }
 
+const FizzBuzz = (req,res)=>{
+    try {
+        const {number} = req.body;
+        const result = `${number} is ${number % 3 ===0 && number % 5=== 0 ? 'Fizz' :'Buzz'}`;
+        res.json({
+            message:'API of fizzbuzz is working',
+            Number : result,
+            Data:true
+        })
+    } catch (error) {
+        res.json({
+            message:'API of fizzbuzz is not working',
+            Number:null,
+            Data:false
+        })
+    }
+}
+
 module.exports = {
     addingtwonumber,
     subtractTwonumber,
@@ -209,6 +227,7 @@ module.exports = {
     Printnumbers1To10,
     PrintOddnumber,
     PrintEvennumber,
-    IsnumOddEven
+    IsnumOddEven,
+    FizzBuzz
     
 }
