@@ -179,6 +179,26 @@ const PrintEvennumber = (req,res)=>{
     }
 }
 
+//This Api tells wether the number is odd or even 
+const IsnumOddEven = (req,res)=>{
+    try {
+        const { number } = req.body;
+        const result = `${number} is ${number % 2 === 0 ? 'even' : 'odd'}`;
+        res.json({
+            message:'Api of OddEven is working',
+            Number : result,
+            Data:true
+
+        })
+    } catch (error) {
+        res.json({
+            message:'Api of OddEven is not working',
+            Number: null,
+            Data:false
+        })
+    }
+}
+
 module.exports = {
     addingtwonumber,
     subtractTwonumber,
@@ -188,6 +208,7 @@ module.exports = {
     DividingAndMulti,
     Printnumbers1To10,
     PrintOddnumber,
-    PrintEvennumber
+    PrintEvennumber,
+    IsnumOddEven
     
 }
