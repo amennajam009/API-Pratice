@@ -109,6 +109,7 @@ const DividingAndMulti = (req,res)=>{
     }
 }
 
+
 // API's Using For Loop
 
 const Printnumbers1To10 = (req,res)=>{
