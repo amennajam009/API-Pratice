@@ -2,7 +2,17 @@ const express = require('express');
 const Router = express.Router();
 
 
-const { addingtwonumber, subtractTwonumber, DividingTwonumber, multiplyTwonumber, AddandSub, DividingAndMulti, Printnumbers1To10, PrintOddnumber, PrintEvennumber,IsnumOddEven,FizzBuzz } = require('../Controllers/ProductTestController');
+const { addingtwonumber, 
+        subtractTwonumber, 
+        DividingTwonumber, 
+        multiplyTwonumber, 
+        AddandSub, 
+        DividingAndMulti, 
+        Printnumbers1To10, 
+        PrintOddnumber, 
+        PrintEvennumber,
+        IsnumOddEven,
+        FizzBuzz } = require('../Controllers/ProductTestController');
 
 
 Router.post('/addingtwonumber', addingtwonumber);
