@@ -68,6 +68,30 @@ const UserInfo = async (req,res) =>{
   }
 
 
+//   now we'll find User From db By using it's unique Id in which we gonna use Condition 
+
+const FindUserbyId = async (req,res)=>{
+    try {
+        const Id = req.params.Id;
+        const Finduser = await ProductGetTestModel.findOne(
+            {_id:Id} // condition
+        )
+        res.json({
+            Message:"User Found Successfully!!",
+            Data:true,
+            Result:Finduser
+        })
+    } catch (error) {
+        res.json({
+            Message:error.message,
+            Data:false,
+            Result:null
+        })
+    }
+  
+}
+
+
 
 
 
@@ -77,7 +101,8 @@ const UserInfo = async (req,res) =>{
     module.exports = {
         UserInfo,
         UserInfo2,
-        UserInfo3
+        UserInfo3,
+        FindUserbyId
     }
 
 
