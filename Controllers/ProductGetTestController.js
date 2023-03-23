@@ -25,8 +25,35 @@ const UserInfo = async (req,res) =>{
     }
 
 
+  const UserInfo2 = async(req,res)=>{
+    try {
+        const {FirstName,LastName,Email,Education}=req.body;
+        const UserModel = new ProductGetTestModel({
+            FirstName,LastName,Email,Education
+        })
+        const GetMoreInfo = await UserModel.save();
+        res.json({
+            Message:"UserInfo2 Api works successfully!!!",
+            Data:true,
+            Result:GetMoreInfo
+        })
+    } catch (error) {
+        res.json({
+            Message:error.message,
+            Data:false,
+            Result:null,
+        })
+    }
+  }
+
+
+
+
+
+
     module.exports = {
-        UserInfo
+        UserInfo,
+        UserInfo2
     }
 
 
