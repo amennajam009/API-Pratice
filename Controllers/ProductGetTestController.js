@@ -26,7 +26,6 @@ const UserInfo = async (req,res) =>{
 
 
     module.exports = {
-        
         UserInfo
     }
 
