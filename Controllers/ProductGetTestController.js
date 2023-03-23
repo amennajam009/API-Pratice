@@ -46,6 +46,29 @@ const UserInfo = async (req,res) =>{
     }
   }
 
+  const UserInfo3 = async(req,res)=>{
+    try {
+        const {FirstName,LastName,Email,Education,Age}=req.body;
+        const UserModel = new ProductGetTestModel({
+            FirstName,LastName,Email,Age,Education
+        })
+        const GetInfoagain= await UserModel.save();
+        res.json({
+            Message:'UserInfo3 Api works Successfully!!!',
+            Data:true,
+            Result:GetInfoagain
+        })
+    } catch (error) {
+       res.json({
+        Message:error.message,
+        Data:false,
+        Result:null
+       }) 
+    }
+  }
+
+
+
 
 
 
@@ -53,7 +76,8 @@ const UserInfo = async (req,res) =>{
 
     module.exports = {
         UserInfo,
-        UserInfo2
+        UserInfo2,
+        UserInfo3
     }
 
 

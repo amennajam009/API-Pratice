@@ -14,6 +14,7 @@ const ProductGetTesting = mongoose.Schema({
    LastName: { type: String, required: true},
     Email: { type: String, required: true },
     Education: { type: String, required: true },
+    Age: { type: Number, required: true },
     // color:{ type:String, required:true },
     // LogoMaterial:{ type:String, required:true },
     // selectSize:[],
