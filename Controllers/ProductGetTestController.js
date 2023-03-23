@@ -95,7 +95,7 @@ const FindUserbyId2 = async (req,res)=>{
     try {
         const Id = req.params.id;
         const FindUser2 = await ProductGetTestModel.findOne(
-            {_id:Id},
+            {_id:Id}, //condition
         )
         res.json({
             Message:"User2 Found Successfully!",
