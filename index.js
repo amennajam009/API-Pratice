@@ -26,14 +26,16 @@ app.all('*', (req, res, next) => {
      //if nothing of the response sent back so next() means other rou
 });
 
-
+// initialization 
 const _ProductTestingController=require('./Routes/ProductTestRoute');
+const _ProductGetTestingController=require ('./Routes/ProductGetTesting')
 
 
 
 
 // using Routes
 app.use( "/ProductTesting" ,_ProductTestingController);
+app.use("/ProductGetTesting",_ProductGetTestingController);
 
 // define PORT
 const PORT = process.env.PORT || 6000
