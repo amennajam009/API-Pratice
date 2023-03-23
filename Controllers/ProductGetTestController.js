@@ -91,7 +91,25 @@ const FindUserbyId = async (req,res)=>{
   
 }
 
-
+const FindUserbyId2 = async (req,res)=>{
+    try {
+        const Id = req.params.id;
+        const FindUser2 = await ProductGetTestModel.findOne(
+            {_id:Id},
+        )
+        res.json({
+            Message:"User2 Found Successfully!",
+            Data:true,
+            Result:FindUser2
+        })
+    } catch (error) {
+        res.json({
+            message:error.message,
+            Data:false,
+            Result:null
+        })
+    }
+}
 
 
 
@@ -102,7 +120,8 @@ const FindUserbyId = async (req,res)=>{
         UserInfo,
         UserInfo2,
         UserInfo3,
-        FindUserbyId
+        FindUserbyId,
+        FindUserbyId2
     }
 
 
