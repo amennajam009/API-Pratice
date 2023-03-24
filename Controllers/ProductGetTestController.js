@@ -112,8 +112,71 @@ const FindUserbyId2 = async (req,res)=>{
 }
 
 
+//this will find and show us all the data which is in our db because we're using .find() query 
+const GetAllProductData =async (req,res) =>{
+        try {
+            // const Id=req.params._id;
+            const FindallData = await ProductGetTestModel.find();
+            res.json({
+                Message:'Here are all the productData',
+                Data:true,
+                Result:FindallData
+            })
+            
+        } catch (error) {
+            res.json({
+                Message:error.message,
+                Data:false,
+                Result:null
+            })
+        }
+}
+
+  //again writting this Api for practice 
+  
+  const WannaFindalldataAgin = async (req,res) =>{
+     try {
+        
+        const AllData = await ProductGetTestModel.find();
+        res.json({
+            message:'You Find All the data',
+            Data:true,
+            Result:AllData
+        })
+     } catch (error) {
+        res.json(
+            {
+                message:error.message,
+                Data:false,
+                Result:null
+            }
+        )
+     }
+  }
 
 
+//   now i'll find the Data with the use of Id
+ 
+  const FindDataById = async (req,res) => {
+       try {
+          const Id = req.params._id;
+          const FindById = await ProductGetTestModel.findOne(
+            {_id:Id}   //condition
+             )
+          res.json({
+            message:"Here the specific Id",
+            Data:true,
+            Result:FindById
+          })
+       } catch (error) {
+          res.json({
+            Message:error.message,
+            Data:false,
+            Result:null
+          })
+       }
+  }
+  
 
 
     module.exports = {
@@ -121,7 +184,10 @@ const FindUserbyId2 = async (req,res)=>{
         UserInfo2,
         UserInfo3,
         FindUserbyId,
-        FindUserbyId2
+        FindUserbyId2,
+        GetAllProductData,
+        WannaFindalldataAgin,
+        FindDataById
     }
 
 
