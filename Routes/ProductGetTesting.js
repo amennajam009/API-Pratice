@@ -16,7 +16,8 @@ const {
     FindDataById,
     FindDataByIdagain,
     FindSpecificThing,
-    FindagainSpecificThing
+    FindagainSpecificThing,
+    AnotherApiOfSpecificthing
 } = require('../Controllers/ProductGetTestController');
 
 
@@ -32,7 +33,8 @@ Router.get('/WannaFindalldataAgin',WannaFindalldataAgin);
 Router.get('/FindDataById/:_id',FindDataById);
 Router.get('/FindDataByIdagain/:_id',FindDataByIdagain);
 Router.get('/FindSpecificThing/:_id',FindSpecificThing);
-Router.get('/FindagainSpecificThing/:_id',FindagainSpecificThing)
+Router.get('/FindagainSpecificThing/:_id',FindagainSpecificThing);
+Router.get('/AnotherApiOfSpecificthing/:_id',AnotherApiOfSpecificthing)
 
 
 

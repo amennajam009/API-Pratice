@@ -249,6 +249,29 @@ const GetAllProductData =async (req,res) =>{
      
     }
 
+    // Again making an Api in which i use condition / projection 
+    // ic Api may Projection ko mai 0 k equal krugi jiska matlb hai k tu woh show mt kr baki sb show kr which is opposite to upper one Api ;)
+
+    const AnotherApiOfSpecificthing = async (req,res) =>{
+        try {
+            const Id = req.params._id;
+            const findDocument = await ProductGetTestModel.findOne(
+                {_id:Id},
+                {FirstName:0 , LastName:0 , Email:0} //icmay yeh fistname /lastname show kryga laken email show nai kryga
+            )
+            res.json({
+                message:'AnotherApiSpecificthing Api works Successfully!!',
+                Data:true,
+                Result:findDocument
+            })
+        } catch (error) {
+            res.json({
+                Message:error.message,
+                Data:false,
+                Result:null
+            })
+        }
+    }
 
     module.exports = {
         UserInfo,
@@ -261,7 +284,8 @@ const GetAllProductData =async (req,res) =>{
         FindDataById,
         FindDataByIdagain,
         FindSpecificThing,
-        FindagainSpecificThing
+        FindagainSpecificThing,
+        AnotherApiOfSpecificthing
 
     }
 
