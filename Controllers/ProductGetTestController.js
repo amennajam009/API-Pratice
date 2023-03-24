@@ -176,7 +176,53 @@ const GetAllProductData =async (req,res) =>{
           })
        }
   }
+
+//   again writting it for practice 
+
+  const FindDataByIdagain = async (req,res) =>{
+    try {
+        const Id= req.params._id;
+        const FindData = await ProductGetTestModel.findOne(
+            {_id:Id} //condition
+        )
+        res.json({
+           Message:'Here the UserInfo',
+           Data:true,
+           Result:FindData 
+        })
+    } catch (error) {
+        res.json({
+            Messsage:error.message,
+            Data:false,
+            Result:null
+        })
+    }
+
+  }
   
+  // In this Api now i'll Get User specific info/selected Info with the use of condition/projection
+
+    const FindSpecificThing =async (req,res) =>{
+        try {
+            const Id=req.params._id;
+            const specificThing = await ProductGetTestModel.findOne(
+                {_id:Id}, //condition
+                {FirstName:1} //projection
+            )
+            res.json({
+                Message:"FindSpecificThing Api works!!",
+                Data:true,
+                Result:specificThing,
+            })
+        } catch (error) {
+            res.json({
+                Message:error.message,
+                Data:false,
+                Result:null
+            })
+        }
+
+    }
 
 
     module.exports = {
@@ -187,7 +233,10 @@ const GetAllProductData =async (req,res) =>{
         FindUserbyId2,
         GetAllProductData,
         WannaFindalldataAgin,
-        FindDataById
+        FindDataById,
+        FindDataByIdagain,
+        FindSpecificThing
+
     }
 
 
