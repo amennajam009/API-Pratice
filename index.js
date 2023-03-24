@@ -28,7 +28,8 @@ app.all('*', (req, res, next) => {
 
 // initialization 
 const _ProductTestingController=require('./Routes/ProductTestRoute');
-const _ProductGetTestingController=require ('./Routes/ProductGetTesting')
+const _ProductGetTestingController=require ('./Routes/ProductGetTesting');
+const _ProductPostTestingController=require('./Routes/ProductPostTesting')
 
 
 
@@ -36,6 +37,7 @@ const _ProductGetTestingController=require ('./Routes/ProductGetTesting')
 // using Routes
 app.use( "/ProductTesting" ,_ProductTestingController);
 app.use("/ProductGetTesting",_ProductGetTestingController);
+app.use("/ProductPostTesting",_ProductPostTestingController)
 
 // define PORT
 const PORT = process.env.PORT || 6000
