@@ -10,7 +10,7 @@ const PostProductData = async (req,res) =>{
         })
         const GetInfo = await UserNewModel.save();
         res.json({
-            Message:'UserInfo Api Works Successfully!!!',
+            Message:' PostProductData Api Works Successfully!!!',
             Data:true,
             Result:GetInfo
         })
@@ -24,9 +24,33 @@ const PostProductData = async (req,res) =>{
      }
     }
 
+ 
+const FormApi = async (req,res) =>{
+    try {
+        const {FirstName,LastName,Email,phone,Address,YourMessage} = req.body;
 
+        const SaveFormInfo = new NewFormTesting({
+            FirstName,LastName,Email,phone,Address,YourMessage
+        })
+        const DocToSave = await SaveFormInfo.save();
+        res.json({
+            Message:'Youe new form Api is working',
+            Data:true,
+            Result:DocToSave
+        })
+
+    } catch (error) {
+        res.json({
+            Message:error.message,
+            Data:false,
+            Result:null
+        })
+    }
+
+}
 
 
 module.exports={
-    PostProductData
+    PostProductData,
+    FormApi
 }

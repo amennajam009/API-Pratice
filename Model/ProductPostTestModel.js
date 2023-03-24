@@ -9,7 +9,7 @@ const year = today.getFullYear(); //year
 const time = today.getTime(); //time 
 
 //Start Block Schema Creating
-const ProductPostTesting = mongoose.Schema({
+const ProductPostTesting =  mongoose.Schema({
     ProductName: { type: String, required: true },
     ProductQuantity: { type: Number, required: true },
     ProductPrice: { type: Number, required: true },
@@ -28,7 +28,29 @@ const ProductPostTesting = mongoose.Schema({
     }
 },
  { timestamps: true })
+ 
 
 
-//Exporting The Schema
-module.exports = mongoose.model('ProductPostTesting', ProductPostTesting);
+//  const NewFormTesting = new mongoose.Schema({
+//     FirstName: { type: String, required: true },
+//     LastName: { type: String, required: true },
+//     Email: { type: String, required: true },
+//     phone:{ type:Number, required:true },
+//     Address:{ type:String, required:true },
+//     YourMessage:{ type:String, required:true },
+
+//     CreatedDate: {
+//         type: String,
+//         default: `${year}-${month}-${day}-${time}`,
+//     }
+// },
+//  { timestamps: true })
+
+
+
+//  const NewForm = mongoose.model('NewFormTesting',NewFormTesting)
+
+ module.exports = mongoose.model('ProductPostTesting', ProductPostTesting);
+//  module.exports = mongoose.model('NewFormTesting',NewFormTesting);
+
+

@@ -3,12 +3,14 @@ const Router = express.Router();
 const model = require('../Model/ProductPostTestModel');
 
 const {
-    PostProductData
+    PostProductData,
+    FormApi
 } = require('../Controllers/ProductPostTestController');
 
 
 
 Router.post('/PostProductData',PostProductData);
+Router.post('/FormApi',FormApi)
 
 
 
