@@ -224,6 +224,31 @@ const GetAllProductData =async (req,res) =>{
 
     }
 
+    // Again making Api in which i use condition /projection
+
+    const FindagainSpecificThing = async (req,res) =>{
+
+        try {
+            const Id=req.params._id;
+            const Findthething = await ProductGetTestModel.findOne(
+                {_id:Id}, //conditon
+                {FirstName:1 , LastName:1 , Email:1} //projection
+            )
+            res.json({
+                Message:'Api works Successfully!!',
+                Data:true,
+                Result:Findthething
+            })
+        } catch (error) {
+            res.json({
+                Message:error.message,
+                Data:false,
+                Result:null
+            })
+        }
+     
+    }
+
 
     module.exports = {
         UserInfo,
@@ -235,7 +260,8 @@ const GetAllProductData =async (req,res) =>{
         WannaFindalldataAgin,
         FindDataById,
         FindDataByIdagain,
-        FindSpecificThing
+        FindSpecificThing,
+        FindagainSpecificThing
 
     }
 
