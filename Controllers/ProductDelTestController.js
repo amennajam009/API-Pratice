@@ -95,6 +95,7 @@ const ApiDeleteId = async (req,res) =>{
 
 
 
+
 module.exports={
     UserInfoToDel,
     ApiOfDelete,
