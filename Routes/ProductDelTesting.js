@@ -17,6 +17,7 @@ const {
 
 
 
+
 Router.delete('/UserInfoToDel/:_id',UserInfoToDel);
 Router.delete('/ApiOfDelete/:_id',ApiOfDelete);
 Router.delete('/ApiDeleteId/:_id',ApiDeleteId)
