@@ -1,4 +1,4 @@
-const  {ProductPostTesting, NewFormTesting ,CustomerSales ,ProductGetTesting}= require("../Model/ProductPostTestModel");
+const  {ProductPostTesting, NewFormTesting ,CustomerSales}= require("../Model/ProductPostTestModel");
 
 
 
@@ -35,21 +35,20 @@ const ApiOfDelete = async (req,res) =>{
      try {
         const Id= req.params._id;
      
-        const IdToDel = await ProductGetTesting.findOne(
+        const IdToDel = await NewFormTesting.findOne(
             {_id:Id}
         );
         
         if(!!IdToDel){
-            const DeleteTheId = await ProductGetTesting.deleteOne(
+            const DeleteTheId = await NewFormTesting.deleteOne(
                 {_id:IdToDel._id},
             )
+            res.json({
+                Message:"Api of Delete is Working",
+                Data:true,
+                Result:DeleteTheId
+            })
         }
-        res.json({
-            Message:"Api of Delete is Working",
-            Data:true,
-            Result:DeleteTheId
-        })
-
      } catch (error) {
         res.json({
             Message:error.message,
