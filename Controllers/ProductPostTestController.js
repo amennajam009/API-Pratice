@@ -1,11 +1,12 @@
-const ProductPostTestModel = require("../Model/ProductPostTestModel");
+const  {ProductPostTesting, NewFormTesting }= require("../Model/ProductPostTestModel");
+// const NewFormTesting =require ("../Model/NewFormTesting")
 
 
 const PostProductData = async (req,res) =>{
 
     try {
         const {ProductName,ProductQuantity,ProductPrice,color,LogoMaterial,EnterDescription} = req.body;
-        const UserNewModel = new ProductPostTestModel({
+        const UserNewModel = new ProductPostTesting({
             ProductName,ProductQuantity,ProductPrice,color,LogoMaterial,EnterDescription
         })
         const GetInfo = await UserNewModel.save();
@@ -29,7 +30,7 @@ const FormApi = async (req,res) =>{
     try {
         const {FirstName,LastName,Email,phone,Address,YourMessage} = req.body;
 
-        const SaveFormInfo = new NewFormTesting({
+        const SaveFormInfo = new NewFormTesting ({
             FirstName,LastName,Email,phone,Address,YourMessage
         })
         const DocToSave = await SaveFormInfo.save();
