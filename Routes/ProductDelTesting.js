@@ -28,10 +28,4 @@ Router.delete('/ApiDeleteId/:_id',ApiDeleteId)
 
 
 
-
-
-
-
-
-
 module.exports = Router;
