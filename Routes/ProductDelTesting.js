@@ -3,7 +3,8 @@ const Router = express.Router();
 
 
 const {
-    UserInfoToDel
+    UserInfoToDel,
+    ApiOfDelete
 }=require ('../Controllers/ProductDelTestController');
 
 
@@ -11,7 +12,8 @@ const {
 
 
 
-Router.delete('/UserInfoToDel/:_id',UserInfoToDel)
+Router.delete('/UserInfoToDel/:_id',UserInfoToDel);
+Router.delete('/ApiOfDelete/:_id',ApiOfDelete)
 
 
 
