@@ -1,4 +1,5 @@
 const  {ProductPostTesting, NewFormTesting ,CustomerSales}= require("../Model/ProductPostTestModel");
+const ProductGetTestModel = require("../Model/ProductGetTestModel");
 
 
 
@@ -59,8 +60,39 @@ const ApiOfDelete = async (req,res) =>{
 }
 
 
+const ApiDeleteId = async (req,res) =>{
+
+    try {
+        const Id= req.params._id;
+        const IdToDel = await ProductGetTestModel.findOne(
+            {_id:Id}
+        );
+        if(!!IdToDel){
+            const LetDelTheUser = await ProductGetTestModel.deleteOne(
+                {_id:IdToDel._id}
+            );
+            res.json({
+                Message:"Api is working",
+                Data:true,
+                Result:LetDelTheUser
+
+            })
+        }
+
+    } catch (error) {
+        res.json({
+            Message:error.message,
+            Data:false,
+            Result:null
+
+        })
+    }
+
+}
+
 
 module.exports={
     UserInfoToDel,
-    ApiOfDelete
+    ApiOfDelete,
+    ApiDeleteId
 }
