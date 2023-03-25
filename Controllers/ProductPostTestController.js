@@ -1,4 +1,4 @@
-const  {ProductPostTesting, NewFormTesting }= require("../Model/ProductPostTestModel");
+const  {ProductPostTesting, NewFormTesting ,CustomerSales}= require("../Model/ProductPostTestModel");
 // const NewFormTesting =require ("../Model/NewFormTesting")
 
 
@@ -51,7 +51,33 @@ const FormApi = async (req,res) =>{
 }
 
 
+const CustomerInfo =async (req,res)=>{
+     try {
+        const {FirstName,Sales,ProductType,Company,Contact,country, month} = req.body;
+
+        const InfoToSave = new CustomerSales ({
+            FirstName,Sales,ProductType,Company,Contact,country, month
+        })
+
+        const DocToSave = await InfoToSave.save();
+        res.json({
+            Message:'Your Api of CustomerInfo is Working',
+            Data:true,
+            Result:DocToSave
+        })
+                
+     } catch (error) {
+        res.json({
+            Message:error.message,
+            Data:false,
+            Result:null
+        })
+     }  
+
+}
+
 module.exports={
     PostProductData,
-    FormApi
+    FormApi,
+    CustomerInfo
 }

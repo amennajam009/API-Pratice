@@ -47,11 +47,24 @@ const ProductPostTesting = new  mongoose.Schema({
  { timestamps: true })
 
 
-
-//  const NewForm = mongoose.model('NewFormTesting',NewFormTesting)
+const CustomerSales = new mongoose.Schema({
+    FirstName: {type:String, required:true },
+    Sales: {type:String, required:true },
+    ProductType: {type:String, required:true },
+    Company: {type:String, required:true },
+    Contact: {type:String, required:true },
+    country: {type:String, required:true },
+    month: {type:String, required:true },
+    CreatedDate: {
+        type: String,
+        default: `${year}-${month}-${day}-${time}`,
+    }
+},
+ { timestamps: true })
 
 module.exports = {
     ProductPostTesting: mongoose.model('ProductPostTesting', ProductPostTesting),
-    NewFormTesting: mongoose.model('NewFormTesting', NewFormTesting)
+    NewFormTesting: mongoose.model('NewFormTesting', NewFormTesting),
+    CustomerSales: mongoose.model('CustomerSales', CustomerSales)
   };
 
