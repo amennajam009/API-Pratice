@@ -5,14 +5,16 @@ const model = require('../Model/ProductPostTestModel');
 const {
     PostProductData,
     FormApi,
-    CustomerInfo
+    CustomerInfo,
+    UserInfoToDel
 } = require('../Controllers/ProductPostTestController');
 
 
 
 Router.post('/PostProductData',PostProductData);
 Router.post('/FormApi',FormApi);
-Router.post('/CustomerInfo',CustomerInfo)
+Router.post('/CustomerInfo',CustomerInfo);
+Router.delete('/UserInfoToDel/:_id',UserInfoToDel)
 
 
 
