@@ -58,6 +58,8 @@ const ApiOfDelete = async (req,res) =>{
      }
 }
 
+
+
 module.exports={
     UserInfoToDel,
     ApiOfDelete
