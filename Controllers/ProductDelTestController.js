@@ -32,6 +32,7 @@ const UserInfoToDel = async (req,res) =>{
    
 }
 
+// again for pratice
 const ApiOfDelete = async (req,res) =>{
      try {
         const Id= req.params._id;
@@ -59,6 +60,7 @@ const ApiOfDelete = async (req,res) =>{
      }
 }
 
+//again for pratice
 
 const ApiDeleteId = async (req,res) =>{
 
