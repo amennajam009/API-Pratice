@@ -93,7 +93,31 @@ const ApiDeleteId = async (req,res) =>{
 }
 
 
-
+const DelTheUser = async(req,res) =>{
+     
+    try {
+        const Id=req.params._id;
+        const FindtheId = await CustomerSales.findOne(
+            {_id:Id}
+        )
+        if(!!FindtheId){
+            const DeleteId = await CustomerSales.deleteOne(
+                {_id:FindtheId._id}
+            );
+            res.json({
+                Message:"The Api of delete is Working Successfully",
+                Data:true,
+                Result:DeleteId
+            })
+        }
+    } catch (error) {
+        res.json({
+            Message:error.message,
+            Data:false,
+            Result:null
+        })
+    }
+}
 
 
 
@@ -101,5 +125,6 @@ const ApiDeleteId = async (req,res) =>{
 module.exports={
     UserInfoToDel,
     ApiOfDelete,
-    ApiDeleteId
+    ApiDeleteId,
+    DelTheUser
 }
