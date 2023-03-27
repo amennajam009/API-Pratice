@@ -119,6 +119,31 @@ const DelTheUser = async(req,res) =>{
     }
 }
 
+const AgainDelete =async (req,res) =>{
+     try {
+        const Id = req.params._id;
+        const Testing2 = await CustomerSales.findOne(
+            {_id:Id}
+        )
+        if (!!Testing2){
+            const DeleteIt = await CustomerSales.deleteOne(
+                {_id:Testing2._id}
+            );
+            res.json({
+                Message:"The Api of AgainDelete Is working successfullyy!!",
+                Data:true,
+                Result:DeleteIt
+            })
+        }
+     } catch (error) {
+        res.json({
+            Message:error.message,
+            Data:false,
+            Result:null
+        })
+     }
+}
+
 
 
 
@@ -126,5 +151,6 @@ module.exports={
     UserInfoToDel,
     ApiOfDelete,
     ApiDeleteId,
-    DelTheUser
+    DelTheUser,
+    AgainDelete
 }
