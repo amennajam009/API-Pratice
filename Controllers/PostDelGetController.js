@@ -117,13 +117,37 @@ const ProjectionCondtion =async (req,res) =>{
              }
 }
 
+// in this Api I'll hide Specific Data With the use of condition/ projection
+ 
+ const CondtionProjectionHide = async(req,res) =>{
+            try {
+                const Id = req.params._id;
+                const HideTheData = await PostDelGetModel.findOne(
+                    {_id:Id},
+                    {FirstName:0,LastName:1,City:0}
+                );
+                res.json({
+                    Message:"Api of ConditionPorjectionHide is Working Successfully!!",
+                    Data:true,
+                    Result:HideTheData
+                })
+            } catch (error) {
+                res.json({
+                    Message:error.message,
+                    Data:false,
+                    Result:null
+
+                })
+            }
+ }
 
 module.exports = {
     PostTheData,
     GetTheData,
     GetTheSpecificData,
     DeleteTheSpecificId,
-    ProjectionCondtion
+    ProjectionCondtion,
+    CondtionProjectionHide
 
     
 }
