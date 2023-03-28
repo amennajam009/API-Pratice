@@ -31,6 +31,7 @@ const _ProductTestingController=require('./Routes/ProductTestRoute');
 const _ProductGetTestingController=require ('./Routes/ProductGetTesting');
 const _ProductPostTestingController=require('./Routes/ProductPostTesting');
 const _ProductDelTestingController=require('./Routes/ProductDelTesting');
+const _PostDelGetController=require('./Routes/PostDelGetTesting')
 
 
 
@@ -40,7 +41,9 @@ const _ProductDelTestingController=require('./Routes/ProductDelTesting');
 app.use( "/ProductTesting" ,_ProductTestingController);
 app.use("/ProductGetTesting",_ProductGetTestingController);
 app.use("/ProductPostTesting",_ProductPostTestingController);
-app.use("/ProductDelTesting", _ProductDelTestingController)
+app.use("/ProductDelTesting", _ProductDelTestingController);
+app.use("/PostDelGetTesting",_PostDelGetController)
+
 
 // define PORT
 const PORT = process.env.PORT || 6000
