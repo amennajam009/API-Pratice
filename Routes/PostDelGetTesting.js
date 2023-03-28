@@ -5,7 +5,8 @@ const {models}=require("../Model/PostDelGetModel");
 const {
     PostTheData,
     GetTheData,
-    GetTheSpecificData
+    GetTheSpecificData,
+    DeleteTheSpecificId
 }=require("../Controllers/PostDelGetController");
 
 
@@ -17,7 +18,8 @@ const {
 
 Router.post("/PostTheData",PostTheData);
 Router.get("/GetTheData",GetTheData);
-Router.get("/GetTheSpecificData/:_id",GetTheSpecificData)
+Router.get("/GetTheSpecificData/:_id",GetTheSpecificData);
+Router.delete("/DeleteTheSpecificId/:_id",DeleteTheSpecificId);
 
 
 

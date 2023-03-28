@@ -67,9 +67,38 @@ const GetTheSpecificData =async (req,res) =>{
 
 }
 
+// now we'll Delete The Specific Id
+
+const DeleteTheSpecificId = async (req,res) =>{
+          try {
+            const Id = req.params._id;
+            const FindTheId = await PostDelGetModel.findOne(
+                {_id:Id}
+            );
+            if(!!FindTheId){
+                const DeleteId = await PostDelGetModel.deleteOne(
+                    {_id:FindTheId._id}
+                ); 
+                res.json({
+                    Message:"The User is Deleted Successfulyy!!",
+                    Data:true,
+                    Result:DeleteId
+                })  
+            }
+          } catch (error) {
+            res.json({
+                Message:error.messsage,
+                Data:false,
+                Result:null
+            })
+          }
+}
+
 module.exports = {
     PostTheData,
     GetTheData,
-    GetTheSpecificData
+    GetTheSpecificData,
+    DeleteTheSpecificId
+
     
 }
