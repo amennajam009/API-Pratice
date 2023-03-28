@@ -94,11 +94,36 @@ const DeleteTheSpecificId = async (req,res) =>{
           }
 }
 
+// in This Api i'll show specific Data With the use of projection / condition
+
+const ProjectionCondtion =async (req,res) =>{
+             try {
+                const Id = req.params._id;
+                const FindTheId = await PostDelGetModel.findOne(
+                    {_id:Id},
+                    {FirstName:1,LastName:1,City:1}
+                );
+                res.json({
+                    Message:"Api Works Successfullyyy!!",
+                    Data:true,
+                    Result:FindTheId
+                })
+             } catch (error) {
+                res.json({
+                    Message:error.message,
+                    Data:false,
+                    Result:null
+                })
+             }
+}
+
+
 module.exports = {
     PostTheData,
     GetTheData,
     GetTheSpecificData,
-    DeleteTheSpecificId
+    DeleteTheSpecificId,
+    ProjectionCondtion
 
     
 }
