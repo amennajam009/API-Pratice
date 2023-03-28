@@ -3,7 +3,9 @@ const Router = express.Router();
 const {models}=require("../Model/PostDelGetModel");
 
 const {
-    PostTheData
+    PostTheData,
+    GetTheData,
+    GetTheSpecificData
 }=require("../Controllers/PostDelGetController");
 
 
@@ -14,6 +16,8 @@ const {
 
 
 Router.post("/PostTheData",PostTheData);
+Router.get("/GetTheData",GetTheData);
+Router.get("/GetTheSpecificData/:_id",GetTheSpecificData)
 
 
 
