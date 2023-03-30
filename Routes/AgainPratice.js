@@ -5,12 +5,14 @@ const {model}=require("../Model/againPratice")
 const {
     PostTheDataFirst,
     FindAllData,
-    FindTheSpecificData
+    FindTheSpecificData,
+    DeleteTheData
 }=require("../Controllers/AgainPratice");
 
 Router.post("/PostTheDataFirst",PostTheDataFirst);
 Router.get("/FindAllData",FindAllData);
-Router.get("/FindTheSpecificData/:_id",FindTheSpecificData)
+Router.get("/FindTheSpecificData/:_id",FindTheSpecificData);
+Router.delete("/DeleteTheData",DeleteTheData)
 
 
 

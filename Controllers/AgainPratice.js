@@ -62,7 +62,25 @@ try {
 }
 }
 
+// delete All Data
 
+const DeleteTheData =async (req,res) =>{
+
+    try {
+        const DeleteTheWholeData = await AgainTask.deleteMany();
+        res.json({
+            Message:"Delete The Data",
+            Data:true,
+            Result:DeleteTheWholeData
+        })
+    } catch (error) {
+        res.json({
+            Message:error.message,
+            Data:false,
+            Result:null
+        })
+    }
+}
 
 
 
@@ -72,5 +90,6 @@ try {
 module.exports={
     PostTheDataFirst,
     FindAllData,
-    FindTheSpecificData
+    FindTheSpecificData,
+    DeleteTheData
 }
