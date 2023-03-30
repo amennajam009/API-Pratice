@@ -82,7 +82,31 @@ const DeleteTheData =async (req,res) =>{
     }
 }
 
+const delspeific =async (req,res) =>{
+    try {
+        const Id = req.params._id;
+        const delTheDoc = await AgainTask.findOne(
+            {_id:Id}
+        );
+        if(!!delTheDoc){
+            const Delthewhole = await AgainTask.deleteOne(
+                {_id:delTheDoc._id}
+            );
+            res.json({
+                message:"Api of delete is working",
+                Data:true,
+                Result:Delthewhole
+            })
+        }
+    } catch (error) {
+        res.json({
+            message:error.message,
+            Data:false,
+            Result:null
+        })
+    }
 
+}
 
 
 
@@ -91,5 +115,6 @@ module.exports={
     PostTheDataFirst,
     FindAllData,
     FindTheSpecificData,
-    DeleteTheData
+    DeleteTheData,
+    delspeific
 }
