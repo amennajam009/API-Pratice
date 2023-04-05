@@ -3,7 +3,7 @@ const cors= require('cors')
 require('dotenv').config();
 // const PORT = process.env.PORT  ;
 const database = require('./configuration/Config');
-
+const path=require('path')
 
 // initinzaing 
 const app = express();
@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(express.text());
 app.use(express.raw());
 app.use(cors());
-
+app.use('/pic', express.static('pic')); 
 
 app.all('*', (req, res, next) => {
     // This is how we protect the api
