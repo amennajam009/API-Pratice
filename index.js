@@ -33,6 +33,7 @@ const _ProductPostTestingController=require('./Routes/ProductPostTesting');
 const _ProductDelTestingController=require('./Routes/ProductDelTesting');
 const _PostDelGetController=require('./Routes/PostDelGetTesting');
 const _AginPratice=require('./Routes/AgainPratice');
+const _ImageApi = require('./Routes/ImageApi')
 
 
 
@@ -45,6 +46,7 @@ app.use("/ProductPostTesting",_ProductPostTestingController);
 app.use("/ProductDelTesting", _ProductDelTestingController);
 app.use("/PostDelGetTesting",_PostDelGetController);
 app.use("/AginPratice",_AginPratice);
+app.use("/ImageApi",_ImageApi);
 
 
 // define PORT
