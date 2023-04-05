@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(express.text());
 app.use(express.raw());
 app.use(cors());
-app.use('/pic', express.static('pic')); 
+app.use('/assets', express.static('/assets')); 
 
 app.all('*', (req, res, next) => {
     // This is how we protect the api
