@@ -2,8 +2,8 @@ const express=require('express');
 const cors= require('cors')
 require('dotenv').config();
 // const PORT = process.env.PORT  ;
-
-
+const database = require('./configuration/Config');
+const path=require('path')
 
 // initinzaing 
 const app = express();
@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(express.text());
 app.use(express.raw());
 app.use(cors());
-
+app.use('/assets', express.static('/assets')); 
 
 app.all('*', (req, res, next) => {
     // This is how we protect the api
@@ -26,19 +26,33 @@ app.all('*', (req, res, next) => {
      //if nothing of the response sent back so next() means other rou
 });
 
-
+// initialization 
 const _ProductTestingController=require('./Routes/ProductTestRoute');
+const _ProductGetTestingController=require ('./Routes/ProductGetTesting');
+const _ProductPostTestingController=require('./Routes/ProductPostTesting');
+const _ProductDelTestingController=require('./Routes/ProductDelTesting');
+const _PostDelGetController=require('./Routes/PostDelGetTesting');
+const _AginPratice=require('./Routes/AgainPratice');
+const _ImageApi = require('./Routes/ImageApi')
+
 
 
 
 
 // using Routes
 app.use( "/ProductTesting" ,_ProductTestingController);
+app.use("/ProductGetTesting",_ProductGetTestingController);
+app.use("/ProductPostTesting",_ProductPostTestingController);
+app.use("/ProductDelTesting", _ProductDelTestingController);
+app.use("/PostDelGetTesting",_PostDelGetController);
+app.use("/AginPratice",_AginPratice);
+app.use("/ImageApi",_ImageApi);
+
 
 // define PORT
 const PORT = process.env.PORT || 6000
 const server =  app.listen(PORT, () => {
-    console.log(`server running in ${process.env.NODE_ENV} mode on port ${PORT}`);
+    console.log(`server running in ${process.env.NODE_ENV} mode on port ${PORT}`.yellow.bold);
 });
 
 
