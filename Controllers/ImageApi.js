@@ -11,14 +11,18 @@ const ProductData=async (req,res )=>{
         const{ProductName,ProductPrice,LogoMaterial,EnterDescription,ProductQuantity,color}=req.body
         let ImageDetails=[]
         // let Size=selectSize.split(',')
-        req.files.forEach(element => {
-            const {filename,orignalname,mimetype}=element
-            ImageDetails.push({
+        if (req.files && req.files.length > 0) {
+            req.files.forEach(element => {
+              const {filename,orignalname,mimetype}=element
+              ImageDetails.push({
                 ImageUrl:`assets/Product/${ProductName}/${filename}`,
                 ImageName:orignalname,
                 ImageMimeType:mimetype
-            })
-        });
+              })
+            });
+          } else {
+            // handle the case where no files were uploaded
+          }
         // creating collection in database 
         const documentoCraete=  new ProductModelSchema({
             ProductName,ProductPrice,EnterDescription,ProductQuantity,LogoMaterial,color,
