@@ -77,10 +77,31 @@ const DeletAllrefractApi =async(req,res) =>{
    }
 }
 
+const DeleteByIdrefractApi =async (req,res)=>{
+    try {
+        const Id = req.params._id;
+        const DelTheDoc = await refractApiTesting.findByIdAndDelete(
+            {_id:Id}
+        );
+        res.json({
+        message:"Api is Working successfully!!",
+        Data:true,
+        Result:DelTheDoc
+        })
+        }
+     catch (error) {
+        res.json({
+            message:error.message,
+            Data:false,
+            Result:null
+        })
+    }
+}
 
 module.exports = {
     PostrefractApi,
     GetreftactApi,
     GetrefractApiById,
-    DeletAllrefractApi
+    DeletAllrefractApi,
+    DeleteByIdrefractApi
 }

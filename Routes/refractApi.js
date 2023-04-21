@@ -6,7 +6,8 @@ const {
     PostrefractApi,
     GetreftactApi,
     GetrefractApiById,
-    DeletAllrefractApi
+    DeletAllrefractApi,
+    DeleteByIdrefractApi
 } = require('../Controllers/refractApi');
 
 
@@ -15,7 +16,8 @@ const {
 Router.post('/PostrefractApi',PostrefractApi);
 Router.get('/GetreftactApi',GetreftactApi);
 Router.get('/GetrefractApiById/:_id',GetrefractApiById);
-Router.delete('/DeletAllrefractApi',DeletAllrefractApi)
+Router.delete('/DeletAllrefractApi',DeletAllrefractApi);
+Router.delete('/DeleteByIdrefractApi/:_id',DeleteByIdrefractApi);
 
 
 
