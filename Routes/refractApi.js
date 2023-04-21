@@ -3,13 +3,15 @@ const Router = express.Router();
 const model = require('../Model/refractApi');
 
 const {
-    PostrefractApi
+    PostrefractApi,
+    GetreftactApi
 } = require('../Controllers/refractApi');
 
 
 
 
 Router.post('/PostrefractApi',PostrefractApi);
+Router.get('/GetreftactApi',GetreftactApi);
 
 
 
