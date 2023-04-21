@@ -40,8 +40,29 @@ const GetreftactApi =async (req,res)=>{
     }
 }
 
+const GetrefractApiById =async (req,res)=>{
+      try {
+        const Id = req.params._id;
+        const FindDocById = await refractApiTesting.findById(
+            {_id:Id}
+        );
+        res.json({
+            message:"API is working!!!",
+            Data:true,
+            Result:FindDocById
+        })
+      } catch (error) {
+        res.json({
+            message:error.message,
+            Data:false,
+            Result:null
+        })
+      }
+}
+
 
 module.exports = {
     PostrefractApi,
-    GetreftactApi
+    GetreftactApi,
+    GetrefractApiById
 }

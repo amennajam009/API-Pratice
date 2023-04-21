@@ -4,7 +4,8 @@ const model = require('../Model/refractApi');
 
 const {
     PostrefractApi,
-    GetreftactApi
+    GetreftactApi,
+    GetrefractApiById
 } = require('../Controllers/refractApi');
 
 
@@ -12,6 +13,7 @@ const {
 
 Router.post('/PostrefractApi',PostrefractApi);
 Router.get('/GetreftactApi',GetreftactApi);
+Router.get('/GetrefractApiById/:_id',GetrefractApiById);
 
 
 
