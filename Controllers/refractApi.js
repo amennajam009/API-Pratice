@@ -81,7 +81,7 @@ const DeleteByIdrefractApi =async (req,res)=>{
     try {
         const Id = req.params._id;
         const DelTheDoc = await refractApiTesting.findByIdAndDelete(
-            {_id:Id}
+            {_id:Id} //condition
         );
         res.json({
         message:"Api is Working successfully!!",
