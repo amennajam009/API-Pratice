@@ -35,7 +35,7 @@ const _PostDelGetController=require('./Routes/PostDelGetTesting');
 const _AginPratice=require('./Routes/AgainPratice');
 const _ImageApi = require('./Routes/ImageApi');
 const _refractApi = require('./Routes/refractApi');
-
+const _devcamperApi = require('./Routes/devcamperApi')
 
 
 
@@ -49,7 +49,9 @@ app.use("/ProductDelTesting", _ProductDelTestingController);
 app.use("/PostDelGetTesting",_PostDelGetController);
 app.use("/AginPratice",_AginPratice);
 app.use("/ImageApi",_ImageApi);
-app.use("/refractApi",_refractApi)
+app.use("/refractApi",_refractApi);
+app.use("/devcamperApi",_devcamperApi);
+
 
 
 // define PORT
