@@ -8,8 +8,9 @@ const devcamperModel = mongoose.Schema({
                 required: true },
    LastName: { type: String, 
                required: true},
-    Phone:   { type: Number, 
-               required: true},           
+   City: { type: String,
+                required: true },
+   Country: { type: String},           
     softDeleteStatus: { type: Number, default: 0},  
   
 },
