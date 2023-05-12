@@ -4,7 +4,8 @@ const Router = express.Router();
 const model = require('../Model/devcampermodel');
 const {MyApiToPost,
       GetAllApiOfDev,
-      DocFindById
+      DocFindById,
+      DocToDelete
 }= require('../Controllers/devcamperApi');
 
 
@@ -15,5 +16,6 @@ const {MyApiToPost,
 Router.post('/MyApiToPost',MyApiToPost);
 Router.get('/GetAllApiOfDev',GetAllApiOfDev);
 Router.get('/DocFindById/:_id',DocFindById);
+Router.delete('/DocToDelete/:_id',DocToDelete);
 
 module.exports = Router;

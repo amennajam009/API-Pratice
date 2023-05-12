@@ -55,10 +55,26 @@ const DocFindById =async (req,res) =>{
     }
 }
 
-
+const DocToDelete = async(req,res) =>{
+   try {
+    const DoctToDeleteById = await devcamperModel.findByIdAndDelete(req.params._id);
+    res.json({
+        message:'APi working',
+        Data:true,
+        Result:DoctToDeleteById
+    })
+   } catch (error) {
+    res.json({
+        message:error.message,
+        Data:false,
+        Result:null
+    })
+   }
+}
 
 module.exports={
     MyApiToPost,
     GetAllApiOfDev,
-    DocFindById
+    DocFindById,
+    DocToDelete
 }
