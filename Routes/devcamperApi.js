@@ -3,7 +3,8 @@ const Router = express.Router();
 
 const model = require('../Model/devcampermodel');
 const {MyApiToPost,
-      GetAllApiOfDev
+      GetAllApiOfDev,
+      DocFindById
 }= require('../Controllers/devcamperApi');
 
 
@@ -13,5 +14,6 @@ const {MyApiToPost,
 
 Router.post('/MyApiToPost',MyApiToPost);
 Router.get('/GetAllApiOfDev',GetAllApiOfDev);
+Router.get('/DocFindById/:_id',DocFindById);
 
 module.exports = Router;

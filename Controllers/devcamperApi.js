@@ -38,11 +38,27 @@ const GetAllApiOfDev =async(req,res)=>{
  
 }
 
-
+const DocFindById =async (req,res) =>{
+    try {
+        const DocTiFindById = await devcamperModel.findById(req.params._id);
+        res.json({
+            message:'Api working',
+            Data:true,
+            Result:DocTiFindById
+        })
+    } catch (error) {
+        res.json({
+            message:error.message,
+            Data:false,
+            Result:null
+        })
+    }
+}
 
 
 
 module.exports={
     MyApiToPost,
-    GetAllApiOfDev
+    GetAllApiOfDev,
+    DocFindById
 }
