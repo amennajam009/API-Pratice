@@ -18,7 +18,24 @@ const MyApiToPost =async (req,res) =>{
         Result:null
      })
    }
+}
 
+const GetAllApiOfDev =async(req,res)=>{
+    try {
+        const DocToFind = await devcamperModel.find();
+        res.json({
+          message:'Api Works!!',
+          Data:true,
+          Result:DocToFind
+        })
+    } catch (error) {
+        res.json({
+            message:error.message,
+            Data:false,
+            Result:null
+        })
+    }
+ 
 }
 
 
@@ -26,5 +43,6 @@ const MyApiToPost =async (req,res) =>{
 
 
 module.exports={
-    MyApiToPost
+    MyApiToPost,
+    GetAllApiOfDev
 }

@@ -2,7 +2,9 @@ const express = require('express');
 const Router = express.Router();
 
 const model = require('../Model/devcampermodel');
-const {MyApiToPost}= require('../Controllers/devcamperApi');
+const {MyApiToPost,
+      GetAllApiOfDev
+}= require('../Controllers/devcamperApi');
 
 
 
@@ -10,5 +12,6 @@ const {MyApiToPost}= require('../Controllers/devcamperApi');
 
 
 Router.post('/MyApiToPost',MyApiToPost);
+Router.get('/GetAllApiOfDev',GetAllApiOfDev);
 
 module.exports = Router;
