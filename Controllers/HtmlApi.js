@@ -1,5 +1,5 @@
 const { json } = require('express');
-const htmlModel2 = require('../Model/HtmlApi');
+const {htmlModel2, HtmlModel3} = require('../Model/HtmlApi');
 
 
 // const MyHtmlApi = async (req, res) => {
@@ -70,6 +70,35 @@ try {
 }
 
 
+const AnotherHtmlApi =async (req,res) =>{
+    try {
+        const {firstname , lastname , country} = req.body;
+        const MyHtml = `<h1>Hello world</h1>
+                         <p>This is my second Api
+                         In which i'm sending The 
+                         Html through Api</p>`
+        const MappingData = await HtmlModel3.create({
+            firstname,
+            lastname,
+            country,
+            html : MyHtml
+        })
+        res.json({
+            data:true,
+            message:'Api works',
+            result: MappingData
+        })                 
+    } catch (error) {
+        res.json({
+            data:false,
+            message:error.message,
+            result:null
+        })
+    }
+}
+
+
 module.exports={
-MyHtmlApi2
+MyHtmlApi2,
+AnotherHtmlApi
 }
