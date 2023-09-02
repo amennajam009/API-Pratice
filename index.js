@@ -36,7 +36,8 @@ const _AginPratice=require('./Routes/AgainPratice');
 const _ImageApi = require('./Routes/ImageApi');
 const _refractApi = require('./Routes/refractApi');
 const _devcamperApi = require('./Routes/devcamperApi');
-const _HtmlApi= require('./Routes/HtmlApi')
+const _HtmlApi= require('./Routes/HtmlApi');
+const _htmlcssapi= require('./Routes/htmlcss')
 
 
 
@@ -52,7 +53,9 @@ app.use("/AginPratice",_AginPratice);
 app.use("/ImageApi",_ImageApi);
 app.use("/refractApi",_refractApi);
 app.use("/devcamperApi",_devcamperApi);
-app.use("/HtmlApi", _HtmlApi)
+app.use("/HtmlApi", _HtmlApi);
+app.use("/htmlcssapi", _htmlcssapi)
+
 
 
 
