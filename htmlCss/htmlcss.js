@@ -1,4 +1,6 @@
 
+
+
 const Html = `
 <body id="ifj9">
     <h1 id="isun">Hello World Component!
@@ -8,7 +10,7 @@ const Html = `
         <thead>
           <tr bgcolor="#c0c0c0">
             <td id="ibtx">
-              <span><strong>Pos</strong></span>
+              <span><strong></strong></span>
             </td>
             <td colspan="2" id="i0ej">
               <span><strong>%G_Qty%</strong></span>
@@ -17,7 +19,7 @@ const Html = `
               <span><span id="iuz4b">Text</span></span>
             </td>
             <td id="i67tz">
-              <strong>%G_Subtotal%</strong>
+              <strong>/strong>
             </td>
             <td id="iccp5">
               <span><strong>%G_Tax% (%)</strong></span>
@@ -185,5 +187,5 @@ const Css = `
 
 module.exports={
     Html,
-    Css
+    Css,
 }
