@@ -1,6 +1,3 @@
-
-
-
 const Html = `
 <body id="ifj9">
     <h1 id="isun">Hello World Component!
