@@ -1,4 +1,4 @@
-const HtmlCssmodel = require('../Model/htmlcss')
+const {HtmlCssmodel} = require('../Model/htmlcss')
 const {Html,Css} = require('../htmlCss/htmlcss')
 
 const htmlcssApi =async (req,res) =>{
