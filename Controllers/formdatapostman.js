@@ -1,4 +1,4 @@
-const formdatapostman = require('../Model/formdatapostman')
+const {formdatapostman} = require('../Model/formdatapostman')
 
 
 const MyformdatapostmanApi = async(req,res) =>{
