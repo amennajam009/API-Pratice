@@ -1,4 +1,4 @@
-const AgainTask =require("../Model/againPratice");
+const {AgainTask , mymodeldata } =require("../Model/againPratice");
 
 
 // First we'll post the data
@@ -108,7 +108,22 @@ const delspeific =async (req,res) =>{
 
 }
 
-
+const mytestingapi =async (req,res) =>{
+    try {
+        const findmydata = await mymodeldata.find();
+        res.json({
+            message:"apiworks",
+            data:true,
+            Result: findmydata
+        })
+    } catch (error) {
+        res.json({
+            message:error.message,
+            data:false,
+            Result:null
+        })
+    }
+}
 
 
 module.exports={
@@ -116,5 +131,6 @@ module.exports={
     FindAllData,
     FindTheSpecificData,
     DeleteTheData,
-    delspeific
+    delspeific,
+    mytestingapi
 }

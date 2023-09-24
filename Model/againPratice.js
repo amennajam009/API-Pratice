@@ -43,5 +43,20 @@ const AgainTask = mongoose.Schema({
 },
  { timestamps: true })
 
+
+
+ const mymodeldata = mongoose.Schema({
+    ProductName: { 
+        type: String, 
+        enum: ["dkgdfg", "dfgd", "ddfg"] // Replace with your desired options
+    }
+
+ })
+
  //Exporting The Schema
-module.exports = mongoose.model('AgainTask', AgainTask);
+// module.exports = mongoose.model('AgainTask', AgainTask);
+
+module.exports = {
+    AgainTask: mongoose.model('AgainTask', AgainTask),
+    mymodeldata: mongoose.model('mymodeldata', mymodeldata),
+  };
