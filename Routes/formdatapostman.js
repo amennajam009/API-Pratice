@@ -2,9 +2,9 @@ const express = require('express');
 const Router = express.Router();
 
 
-const {anything} = require('../Controllers/formdatapostman')
+const {MyformdatapostmanApi} = require('../Controllers/formdatapostman')
 
-
+Router.post("/MyformdatapostmanApi",MyformdatapostmanApi)
 
 
 
