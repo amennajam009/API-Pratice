@@ -31,5 +31,5 @@ const formdatapostman = mongoose.Schema({
 
 module.exports = {
     formdatapostman: mongoose.model('formdatapostman', formdatapostman),
-    newdataapi: mongoose.model('formdatapostman', newdataapi)
+    newdataapi: mongoose.model('testingdataapi', newdataapi)
   };
