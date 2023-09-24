@@ -15,7 +15,21 @@ const formdatapostman = mongoose.Schema({
  { timestamps: true })
 
 
+ const newdataapi = mongoose.Schema({
+    FirstName: { type: String, 
+                required: true },
+   LastName: { type: String, 
+               required: true},
+   City: { type: String,
+                required: true },
+   Country: { type: String},           
+    phone  : { type: Number, default: 0},  
+  
+},
+ { timestamps: true })
+
 
 module.exports = {
-    formdatapostman: mongoose.model('formdatapostman', formdatapostman)
+    formdatapostman: mongoose.model('formdatapostman', formdatapostman),
+    newdataapi: mongoose.model('formdatapostman', newdataapi)
   };
