@@ -1,6 +1,6 @@
 
 
-const {SearchByName} = require('../Model/SearchByNameApi')
+const SearchByName = require('../Model/SearchByNameApi')
 
 const PostSearchByNameData = async(req,res) =>{
     try {
@@ -22,6 +22,7 @@ const PostSearchByNameData = async(req,res) =>{
         })
     }
 }
+
 
 module.exports = {
 PostSearchByNameData
