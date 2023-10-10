@@ -26,7 +26,7 @@ const PostSearchByNameData = async(req,res) =>{
 const GetSearchByNameData =async (req,res) =>{
     try {
        const FindByName = req.params.Name;
-       const DataToFindByName = await SearchByName(
+       const DataToFindByName = await SearchByName.findOne(
         {Name:FindByName} //condition
        )
        res.json({
