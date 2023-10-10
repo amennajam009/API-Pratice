@@ -39,7 +39,7 @@ const _devcamperApi = require('./Routes/devcamperApi');
 const _HtmlApi= require('./Routes/HtmlApi');
 const _htmlcssapi= require('./Routes/htmlcss');
 const _formdatapostman = require('./Routes/formdatapostman')
-
+const _SearchByNameApi = require('./Routes/SearchByNameApi')
 
 
 
@@ -57,6 +57,7 @@ app.use("/devcamperApi",_devcamperApi);
 app.use("/HtmlApi", _HtmlApi);
 app.use("/htmlcssapi", _htmlcssapi);
 app.use("/formdatapostman", _formdatapostman);
+app.use("/SearchByNameApi",_SearchByNameApi)
 
 
 
