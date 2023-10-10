@@ -62,15 +62,11 @@ try {
         }
       } 
       res.json({
-        message:"get data works",
-        data:true,
-        result:mydata
+        data:mydata
       })
 } catch (error) {
     res.json({
-        message:error.message,
         data:false,
-        result:null
     })
 }
 }
