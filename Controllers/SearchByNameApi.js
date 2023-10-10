@@ -42,7 +42,40 @@ const GetSearchByNameData =async (req,res) =>{
         })
     }
 }
+const GetDataApi =async (req,res) =>{
+try {
+    const mydata = {
+        collection1 : {
+            id:1,
+            name : "amen",
+            age : 21
+        },
+        collection2 : {
+            id:2,
+            name: "amen2",
+            age:21
+        },
+        collection3 : {
+            id:3,
+            name: "amen3",
+            age:21
+        }
+      } 
+      res.json({
+        message:"get data works",
+        data:true,
+        result:mydata
+      })
+} catch (error) {
+    res.json({
+        message:error.message,
+        data:false,
+        result:null
+    })
+}
+}
 module.exports = {
 PostSearchByNameData,
-GetSearchByNameData
+GetSearchByNameData,
+GetDataApi
 }
