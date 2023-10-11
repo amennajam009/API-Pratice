@@ -1,3 +1,4 @@
+const SearchByNameApi = require('../Model/SearchByNameApi');
 const SearchQueryApi = require('../Model/searchqueryApi');
 
 const PostDataFirstInDb = async (req,res) =>{
@@ -22,8 +23,28 @@ const PostDataFirstInDb = async (req,res) =>{
 }
 
 
+const SearchByQuery = async (req,res) =>{
+    try {
+        const SearchByName = req.query.name;
+        const SearchDataByName = await SearchByNameApi.findOne(
+            {name:SearchByName} //condition
+        )
+        res.json({
+            message:"Api working Successfully",
+            data:SearchDataByName,
+            result:true
+        })
+    } catch (error) {
+       res.json({
+        message:error.message,
+        data:null,
+        result:false
+       }) 
+    }
+}
 
 
 module.exports = {
-    PostDataFirstInDb
+    PostDataFirstInDb,
+    SearchByQuery
 }
