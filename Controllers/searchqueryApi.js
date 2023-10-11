@@ -63,9 +63,32 @@ const FindDataByName = async (req,res) =>{
         })
     }
 }
+
+// Search 2 Data 
+const Search2DataQueryApi =async (req,res) =>{
+    try {
+        const SearchName = req.query.search;
+        const SearchCountry= req.query.Country;
+        const SearchBothData = await SearchQueryApi.findOne(
+            {name:SearchName ,country:SearchCountry} //condition
+        )
+        res.json({
+           message: "HERE WE GO!! API WORKS SUCCESSFULLY!!",
+           data:SearchBothData, 
+           result:true
+        })
+    } catch (error) {
+        res.json({
+            message:error.message,
+            data:null,
+            result:false
+        })
+    }
+}
 module.exports = {
     PostDataFirstInDb,
     SearchByQuery,
     FindDataByName,
-    FindDataByName
+    FindDataByName,
+    Search2DataQueryApi
 }
