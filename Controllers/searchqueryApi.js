@@ -25,8 +25,8 @@ const PostDataFirstInDb = async (req,res) =>{
 
 const SearchByQuery = async (req,res) =>{
     try {
-        const SearchByName = req.query.name;
-        const SearchDataByName = await SearchByNameApi.findOne(
+        const SearchByName = req.query.search;
+        const SearchDataByName = await SearchQueryApi.findOne(
             {name:SearchByName} //condition
         )
         res.json({
