@@ -47,8 +47,25 @@ const SearchByQuery = async (req,res) =>{
 
 // ==========> http://localhost:6060/SearchQueryApi/SearchByQuery?search=TestingName
 
-
+//For Pratice 
+const FindDataByName = async (req,res) =>{
+    try {
+      const FindObjectByName = req.query.search;
+      const DataToFind = await SearchQueryApi.findOne(
+        {country:FindObjectByName} //condition
+      )      
+      res.json({
+        data:DataToFind
+      })  
+    } catch (error) {
+        res.json({
+            data:null
+        })
+    }
+}
 module.exports = {
     PostDataFirstInDb,
-    SearchByQuery
+    SearchByQuery,
+    FindDataByName,
+    FindDataByName
 }
