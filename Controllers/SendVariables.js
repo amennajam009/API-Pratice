@@ -21,11 +21,11 @@ const DataToSendVariables = async (req,res) =>{
            age:21
         }
      }        
-     res.json({
+     res.send({
         data:MyObject
      })
     } catch (error) {
-        res.json({
+        res.send({
             data:null,
             message:error.message
         })

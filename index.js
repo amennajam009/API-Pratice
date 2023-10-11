@@ -41,6 +41,7 @@ const _htmlcssapi= require('./Routes/htmlcss');
 const _formdatapostman = require('./Routes/formdatapostman')
 const _SearchByNameApi = require('./Routes/SearchByNameApi')
 const _SendVariables = require('./Routes/SendVariables')
+const SearchQueryApi = require('./Routes/searchqueryApi')
 
 
 
@@ -59,6 +60,7 @@ app.use("/htmlcssapi", _htmlcssapi);
 app.use("/formdatapostman", _formdatapostman);
 app.use("/SearchByNameApi",_SearchByNameApi);
 app.use("/SendVariables",_SendVariables);
+app.use("/SearchQueryApi",SearchQueryApi);
 
 
 
