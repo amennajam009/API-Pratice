@@ -43,6 +43,10 @@ const SearchByQuery = async (req,res) =>{
     }
 }
 
+//For Testing Api on PostMan
+
+// ==========> http://localhost:6060/SearchQueryApi/SearchByQuery?search=TestingName
+
 
 module.exports = {
     PostDataFirstInDb,
