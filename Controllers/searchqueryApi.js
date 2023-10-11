@@ -9,7 +9,7 @@ const PostDataFirstInDb = async (req,res) =>{
         const DataToSave = await MappingData.save();
         res.json({
             message: "Api Works",
-            data:MyData,
+            data:DataToSave,
             Result:true
         })
     } catch (error) {
